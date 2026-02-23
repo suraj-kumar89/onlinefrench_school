@@ -143,10 +143,9 @@ const handleSubmit = useCallback(async () => {
   if (hasError) return;
   setLoading(true);
 
-  const [firstName, ...last] = form.fullName.trim().split(" ");
-  const lastName = last.join(" ") || "NA";
-  const countryOnly = form.countryCode.split(" (")[0];
+  const firstName = form.fullName.trim();
 
+  const countryOnly = form.countryCode.split(" (")[0];
   const callingCode = form.countryCode.match(/\+\d+/)?.[0] || "";
   const fullPhone = `${callingCode}${form.phone}`;
 
@@ -160,18 +159,19 @@ const handleSubmit = useCallback(async () => {
     fields: [
       { name: "email", value: form.email },
       { name: "firstname", value: firstName },
-      { name: "lastname", value: lastName },
       { name: "phone", value: fullPhone },
       { name: "country", value: countryOnly },
 
       { name: "tef_goal_tef_form", value: form.goal },
       { name: "french_level_tef_form", value: form.frenchLevel },
+
       {
-  name: "preferred_start_date",
-  value: new Date(form.startDate).getTime(),
-},
+        name: "preferred_start_date",
+        value: new Date(form.startDate).getTime(),
+      },
 
       { name: "message", value: form.learningNeeds },
+
       { name: "utm_source", value: utm.utm_source },
       { name: "utm_medium", value: utm.utm_medium },
       { name: "utm_campaign", value: utm.utm_campaign },
@@ -188,21 +188,19 @@ const handleSubmit = useCallback(async () => {
     legalConsentOptions: {
       consent: {
         consentToProcess: true,
-        text:
-          "I agree to allow this website to store and process my personal data.",
+        text: "I agree to allow this website to store and process my personal data.",
       },
     },
   };
 
   const res = await fetch(
-  `${process.env.REACT_APP_API_URL}/api/hubspot-submit`,
-  {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify(payload),
-  }
-);
-
+    `${process.env.REACT_APP_API_URL}/api/hubspot-submit`,
+    {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(payload),
+    }
+  );
 
   if (!res.ok) {
     const err = await res.json();
