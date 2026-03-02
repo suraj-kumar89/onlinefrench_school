@@ -27,8 +27,8 @@ export const content = {
     "Live online classes with certified French tutors. Flexible schedules, personalized learning, and a free trial class to help you start with confidence.",
   ctas: {
     explore: "Explore Courses",
-    book: "Book Free Trial Class",
-    submit: "Get Started for Free →",
+    book: "Book Trial Class",
+    submit: "Get Started  →",
   },
   bulletsLeft: [
     "Personalised guidance for every student",
