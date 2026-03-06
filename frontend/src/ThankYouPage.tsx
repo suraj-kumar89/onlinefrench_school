@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import Header from "../src/components/Header";
 import { Link } from "react-router-dom";
 
 const ThankYouPage = () => {
+  
+  const [showPersuasion, setShowPersuasion] = useState(false);
   return (
     <div className="flex flex-col min-h-screen items-center font-[Raveo_Display]">
       <Header />
@@ -86,13 +88,12 @@ const ThankYouPage = () => {
           </a>
 
           {/* Back Link */}
-          <Link
-            to="/"
-            className="text-[#808080] text-sm underline hover:text-black transition"
+         <button
+            onClick={() => setShowPersuasion(true)}
+            className="text-[#808080] text-sm underline hover:text-black"
           >
-            No thanks, I will wait for the counsellor
-          </Link>
-
+            No thanks, I will wait for the counsellor.
+          </button>
         </div>
 
       </main>
