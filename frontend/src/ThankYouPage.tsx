@@ -78,7 +78,7 @@ const ThankYouPage = () => {
 
           {/* Payment Button */}
           <a
-            href="https://rzp.io/rzp/tef-india"
+            href="https://pages.razorpay.com/tef-india"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center px-8 py-[0.875rem] rounded-[3.875rem] bg-[#6346FA] text-white text-[1rem] font-semibold leading-[1.5rem]"
