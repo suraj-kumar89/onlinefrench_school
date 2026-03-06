@@ -96,6 +96,46 @@ const ThankYouPage = () => {
         </div>
 
       </main>
+
+
+       {showPersuasion && (
+
+        <div className="fixed inset-0 flex items-center justify-center bg-black/40 z-50 px-4">
+
+          <div className="bg-[#F3EFE2] max-w-[520px] w-full rounded-2xl shadow-xl p-8 text-center">
+
+            <h2 className="text-2xl md:text-3xl font-bold mb-3">
+              Most students attend the demo before deciding.
+            </h2>
+
+            <p className="text-gray-700 mb-6">
+              The ₹99 session helps you experience the teaching style,
+              understand the course structure, and see how quickly you can start TEF preparation for Canada PR.
+            </p>
+
+            {/* CTA */}
+            <a
+              href="https://rzp.io/rzp/tef-india"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block w-full bg-black text-white py-3 rounded-lg font-semibold mb-3 hover:opacity-90"
+            >
+              Join the ₹99 Demo Session
+            </a>
+
+            {/* Exit */}
+            <Link
+              to="/"
+              className="block w-full bg-gray-200 py-3 rounded-lg font-medium hover:bg-gray-300"
+            >
+              Continue without booking
+            </Link>
+
+          </div>
+
+        </div>
+
+      )}
     </div>
   );
 };
