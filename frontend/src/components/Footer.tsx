@@ -1,25 +1,15 @@
 "use client";
 
-import React, { useState } from "react";
+import React from "react";
 
-type FooterProps = {
-  onSubscribe?: (email: string) => void;
-  brand?: string;        // primary purple
-  brandSoft?: string;    // softer purple (CTA background)
-  neutralPrimary?: string;
-  neutralSecondary?: string;
-  divider?: string;
-};
+
 
 export default function Footer({
-  onSubscribe,
-  brand = "#984DDD",
   brandSoft = "#D3E373",
   neutralPrimary = "#022850",
   neutralSecondary = "#6B6A70",
   divider = "#E7E6EA",
-}: FooterProps) {
-  const [email, setEmail] = useState("");
+}) {
 
 
   return (
